@@ -15,11 +15,13 @@ const variantsMenuActive = {
   open: {
     y: 0,
     opacity: 1,
+    display: "flex",
     transition: {
-      y: { stiffness: 1000, velocity: -100 },
+      y: { stiffness: 1000, velocity: -150 },
     },
   },
   closed: {
+    display: "none",
     y: 50,
     opacity: 0,
     transition: {
