@@ -8,12 +8,8 @@ export const Header = () => {
     await loadFirePreset(main);
   };
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
-    <header>
+    <header id="Inicio">
       <Particles
         id="tsparticles"
         options={{
@@ -21,12 +17,11 @@ export const Header = () => {
           preset: "fire",
           detectRetina: true,
           fullScreen: {
-            enable: true,
+            enable: false,
             zIndex: 0,
           },
         }}
         init={particlesInit}
-        loaded={particlesLoaded}
       />
       <SideBar />
     </header>

@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "./MenuItem";
+import { menuItems } from "../../Data/Menu";
 
 const variants = {
   open: {
@@ -30,10 +31,9 @@ const variantsMenuActive = {
   },
 };
 
-export const Navigation = ({ toggle }) => {
+export const Navigation = () => {
   const img = require.context("../../assets/img", true);
 
-  const itemIds = [0, 1, 2, 3, 4];
   return (
     <>
       <motion.ul variants={variants}>
@@ -42,12 +42,12 @@ export const Navigation = ({ toggle }) => {
           src={img("./logo.svg")}
           className="logo-sidebar"
         />
-        {itemIds.map((i) => (
+        {menuItems.map((item, key) => (
           <MenuItem
-            i={i}
-            key={i}
-            liToggle={toggle}
+            i={key}
+            key={key}
             variantsMenuActive={variantsMenuActive}
+            item={item}
           />
         ))}
       </motion.ul>

@@ -16,7 +16,7 @@ header #tsparticles {
   margin-bottom: 50px;
 }
 nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -80,8 +80,9 @@ li {
 .text-placeholder {
   border-radius: 5px;
   width: 200px;
-  height: 20px;
   flex: 1;
+  padding: 5px 20px;
+  text-transform: capitalize;
 }
 
 .refresh {
@@ -97,4 +98,17 @@ li {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+}
+
+.link-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
+}
+
+.aboutUs {
+  border: 1px solid red;
+  height: 1050px;
 }
