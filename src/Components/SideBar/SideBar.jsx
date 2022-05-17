@@ -1,9 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "../../Hooks/useDimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
-import { useDesplazamiento } from "../../Hooks/useDesplazamiento";
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -29,8 +28,8 @@ export const SideBar = () => {
   const [isOpen, toggleOpen] = useCycle(false, true);
   const containerRef = useRef(null);
   const { height } = useDimensions(containerRef);
-  const { current } = useDesplazamiento();
-  console.log(current);
+
+
 
   return (
     <motion.nav
@@ -39,7 +38,10 @@ export const SideBar = () => {
       custom={height}
       ref={containerRef}
     >
-      <motion.div className="background" variants={sidebar} />
+      <motion.div
+        className="background"
+        variants={sidebar}
+      />
       <Navigation />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.nav>
